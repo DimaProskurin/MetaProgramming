@@ -1,3 +1,6 @@
+#ifndef METAPROGRAMMING_TYPELIST_H
+#define METAPROGRAMMING_TYPELIST_H
+
 class NullType {};
 
 template<typename T, typename U>
@@ -61,3 +64,5 @@ template<typename Head, typename Tail, typename T>
 struct Erase<TypeList<Head, Tail>, T> {
     using Result = TypeList<Head, typename Erase<Tail, T>::Result>;
 };
+
+#endif
